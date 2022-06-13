@@ -58,6 +58,7 @@
                 productId: $scope.invoiceForm.productId,
                 productName: product.name,
                 productPrice: product.price,
+                productSubName: product.subname,
                 quantity: $scope.invoiceForm.quantity,
                 subtotal: product.price * $scope.invoiceForm.quantity
             });
@@ -191,13 +192,16 @@
             <thead>
                 <tr>
                     <th>
-                        Product
+                        Producto
                     </th>
                     <th>
-                        Price
+                        Variante
                     </th>
                     <th>
-                        Quantity
+                        Precio
+                    </th>
+                    <th>
+                        Cantidad
                     </th>
                     <th>
                         Subtotal
@@ -208,6 +212,9 @@
                 <tr ng-repeat="detail in invoice.invoiceDetails">
                     <td>
                         @{{ detail.productName }}
+                    </td>
+                    <td>
+                        @{{ detail.productSubName }}
                     </td>
                     <td>
                         @{{ detail.productPrice }}

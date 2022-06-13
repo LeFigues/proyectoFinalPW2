@@ -80,7 +80,6 @@
                 <td>
                 <div class="btn-group btn-group-sm" role="group" aria-label="Basic mixed styles example">
                     <button type="button" class="btn btn-outline-success">Vender</button>
-                    <a type="button" class="btn btn-outline-info" href="@{{ '/editcustomer/' + customer.id }}">Precios Productos</a>
                     <a type="button" class="btn btn-outline-warning" href="@{{ '/editcustomer/' + customer.id }}">Editar</a>
                     <button type="button" class="btn btn-outline-danger" ng-click="deleteCustomer(customer.id)">Eliminar</button>
 

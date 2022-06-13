@@ -103,7 +103,7 @@ Route::get('/materialedit/{id}',[MaterialController::class, 'editMaterial'])->mi
 Route::get('/salepointedit/{id}',[SalePointController::class, 'editSalePoint'])->middleware('auth');
 Route::get('/salepointlist', [SalePointController::class, 'showSalePointList'])->middleware('auth')->name('salepointlist');
 Route::get('/salepointnew', [SalePointController::class, 'showNewSalePoint'])->middleware('auth');
-Route::get('/salepoints', [SalePointController::class, 'getSalePoints'])->middleware('auth');
+Route::get('/salepoints', [SalePointController::class, 'getSalePoints']);
 Route::get('/salepoints/{id}', [SalePointController::class, 'getSalePointById'])->middleware('auth');
 Route::post('/salepoints', [SalePointController::class, 'postSalePoint'])->middleware('auth');
 Route::put('/salepoints', [SalePointController::class, 'putSalePoint'])->middleware('auth');

@@ -62,11 +62,7 @@
       </a>
     </li>
     <hr>
-    <li>
-      <a href="/webinfo/{0}" class="nav-link text-white">
-        Detalles
-      </a>
-    </li>
+    
     <li>
       <a href="/salepointlist" class="nav-link text-white">
         Puntos de Venta
