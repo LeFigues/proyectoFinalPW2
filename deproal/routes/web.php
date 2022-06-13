@@ -70,7 +70,7 @@ Route::get('/productsalmacen', [AjaxProductController::class, 'getProductsAlmace
 Route::get('/productalmacen', [AjaxProductController::class, 'showProductAlmacen'])->middleware('auth')->name('productalmacen');
 Route::get('/ajaxproductlist', [AjaxProductController::class, 'showProductList'])->middleware('auth')->name('ajaxproductslist');
 Route::get('/ajaxnewproduct', [AjaxProductController::class, 'showNewProduct'])->middleware('auth');
-Route::get('/ajaxproducts', [AjaxProductController::class, 'getProducts'])->middleware('auth');
+Route::get('/ajaxproducts', [AjaxProductController::class, 'getProducts']);
 Route::get('/ajaxproducts/{id}', [AjaxProductController::class, 'getProductById'])->middleware('auth');
 Route::post('/ajaxproducts', [AjaxProductController::class, 'postProduct'])->middleware('auth');
 Route::put('/ajaxproducts', [AjaxProductController::class, 'putProduct'])->middleware('auth');

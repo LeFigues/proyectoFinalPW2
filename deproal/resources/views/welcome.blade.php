@@ -26,7 +26,14 @@
         <script type="text/javascript">
             var app = angular.module('SalePointListModule', []);
             app.controller('SalePointListController', ($scope, $http) => {
-                $scope.salepoints = [];
+              $scope.products = [];
+
+                angular.element(document).ready(() => {
+                    $http.get('/ajaxproducts').then((result) => {
+                        $scope.products = result.data;
+                    });
+                });
+              $scope.salepoints = [];
 
                 angular.element(document).ready(() => {
                     $http.get('/salepoints').then((result) => {
@@ -256,6 +263,52 @@
                     <button type="button" class="btn btn-outline-success">GoogleMaps</button>
                 </div>
                 </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Productos</h1>
+        </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    Producto
+                </th>
+                <th>
+                    Variante
+                </th>
+                <th>
+                    Categoria
+                </th>
+                <th>
+                    Descripcion
+                </th>
+                <th>
+                    Precio
+                </th>
+                
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="product in products">
+                <td>
+                    @{{ product.name }}
+                </td>
+                <td>
+                    @{{ product.subname }}
+                </td>
+                <td>
+                    @{{ product.category }}
+                </td>
+                <td>
+                    @{{ product.description }}
+                </td>
+                <td>
+                    @{{ product.price }}
+                </td>
+                
             </tr>
         </tbody>
     </table>

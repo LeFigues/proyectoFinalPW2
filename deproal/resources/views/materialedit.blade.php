@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Edit Material')
+@section('title', 'Editar Material')
 @section('content')
 <script type="text/javascript">
     var app = angular.module('MaterialEditModule', []);

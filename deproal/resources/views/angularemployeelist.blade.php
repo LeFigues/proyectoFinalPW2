@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Employee List')
+@section('title', 'Empleados')
 @section('content')
 <script type="text/javascript">
     var app = angular.module('EmployeeListModule', []);
