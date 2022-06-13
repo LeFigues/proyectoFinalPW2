@@ -34,9 +34,6 @@
         <thead>
             <tr>
                 <th>
-                    Foto
-                </th>
-                <th>
                     Producto
                 </th>
                 <th>
@@ -59,9 +56,6 @@
         </thead>
         <tbody>
             <tr ng-repeat="product in products">
-                <td>
-                    @{{ product.photo }}
-                </td>
                 <td>
                     @{{ product.name }}
                 </td>

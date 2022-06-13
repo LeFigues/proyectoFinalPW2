@@ -34,9 +34,6 @@
         <thead>
             <tr>
                 <th>
-                    Foto
-                </th>
-                <th>
                     Material
                 </th>
                 <th>
@@ -58,9 +55,6 @@
         </thead>
         <tbody>
             <tr ng-repeat="material in materials">
-                <td>
-                    @{{ material.photo }}
-                </td>
                 <td>
                     @{{ material.name }}
                 </td>
