@@ -114,11 +114,8 @@ class AjaxCustomerController extends Controller
             $customer->address = $requestData['address'];
             $customer->birthDate = $requestData['birthDate'];
             
-            $user = User::find($customer->userId);
-            $user->password = Hash::make($requestData['password']);
 
             $customer->save();
-            $user->save();
 
             DB::commit();
             return ['result' => 1];

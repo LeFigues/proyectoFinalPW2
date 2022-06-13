@@ -69,18 +69,6 @@
             <input type="text" class="form-control" id="txtBirthDate" ng-model="customer.birthDate">
             <label for="txtBirthDate">Fecha de Nacimiento</label>
         </div>
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="txtUser" ng-model="customer.name">
-            <label for="txtUser">Usuario</label>
-        </div>
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="txtEmail" ng-model="customer.email">
-            <label for="txtEmail">Email</label>
-        </div>
-        <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="txtPassword" ng-model="customer.password">
-            <label for="txtPassword">Contraseña</label>
-        </div>
         <div class="d-grid gap-2">
             <button class="btn btn-success" type="button" ng-click="putCustomer()">Registrar Cliente</button>
         </div>

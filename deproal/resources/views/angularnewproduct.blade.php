@@ -54,9 +54,6 @@
             <input type="text" class="form-control" id="txtDebt" ng-model="product.description">
             <label for="txtDebt">Descripcion</label>
         </div>
-        <div class="input-group mb-3">
-            <input type="file" class="form-control" id="inputGroupFile02">
-        </div>
         <div class="form-floating mb-3">
             <input type="text" class="form-control" id="txtInfo" ng-model="product.photo">
             <label for="txtInfo">Photo</label>

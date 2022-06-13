@@ -85,11 +85,8 @@ class AjaxEmployeeController extends Controller
             $employee->address = $requestData['address'];
             $employee->photo = $requestData['photo'];
             
-            $user = User::find($employee->userId);
-            $user->password = Hash::make($requestData['password']);
 
             $employee->save();
-            $user->save();
 
             DB::commit();
             return ['result' => 1];

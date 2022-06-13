@@ -74,18 +74,6 @@
             <input type="text" class="form-control" id="txtBirthDate" ng-model="employee.photo">
             <label for="txtBirthDate">Foto</label>
         </div>
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="txtUser" ng-model="employee.name">
-            <label for="txtUser">Usuario</label>
-        </div>
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="txtEmail" ng-model="employee.email">
-            <label for="txtEmail">Email</label>
-        </div>
-        <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="txtPassword" ng-model="employee.password">
-            <label for="txtPassword">Contraseña</label>
-        </div>
         <div class="d-grid gap-2">
             <button class="btn btn-success" type="button" ng-click="putEmployee()">GuardarCambios</button>
         </div>

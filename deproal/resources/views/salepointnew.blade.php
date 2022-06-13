@@ -49,7 +49,7 @@
         </div>
         <div class="form-floating mb-3">
             <input type="text" class="form-control" id="txtBirthDate" ng-model="salepoint.photo">
-            <label for="txtBirthDate">Foto</label>
+            <label for="txtBirthDate">Maps</label>
         </div>
         <div class="d-grid gap-2">
             <button class="btn btn-success" type="button" ng-click="addSalePoint()">Registrar Punto de Venta</button>

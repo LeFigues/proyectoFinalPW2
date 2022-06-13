@@ -34,10 +34,10 @@
         <thead>
             <tr>
                 <th>
-                    Foto
+                    Nombre
                 </th>
                 <th>
-                    Nombre
+                    El lugar es
                 </th>
                 <th>
                     Direccion
@@ -57,10 +57,10 @@
         <tbody>
             <tr ng-repeat="salepoint in salepoints">
                 <td>
-                    @{{ salepoint.photo }}
+                    @{{ salepoint.name }}
                 </td>
                 <td>
-                    @{{ salepoint.name }}
+                    @{{ salepoint.type }}
                 </td>
                 <td>
                     @{{ salepoint.address }}
@@ -73,7 +73,7 @@
                 </td>
                 <td>
                 <div class="btn-group btn-group-sm" role="group" aria-label="Basic mixed styles example">
-                    <button type="button" class="btn btn-outline-success">GoogleMaps</button>
+                    <a type="button" class="btn btn-outline-success" href="@{{ salepoint.photo }}" target="_blank">GoogleMaps</a>
                     <a type="button" class="btn btn-outline-warning" href="@{{ '/salepointedit/' + salepoint.id }}">Editar</a>
                     <button type="button" class="btn btn-outline-danger" ng-click="deleteSalePoint(salepoint.id)">Eliminar</button>
                 </div>

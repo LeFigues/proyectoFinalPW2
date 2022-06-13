@@ -41,9 +41,6 @@
         <thead>
             <tr>
                 <th>
-                    Foto
-                </th>
-                <th>
                     Cargo
                 </th>
                 <th>
@@ -51,6 +48,9 @@
                 </th>
                 <th>
                     Apellidos
+                </th>
+                <th>
+                    Salario
                 </th>
                 <th>
                     Celular
@@ -62,9 +62,7 @@
         </thead>
         <tbody>
             <tr ng-repeat="employee in employees">
-                <td>
-                    @{{ employee.photo }}
-                </td>
+                
                 <td>
                     @{{ employee.charge }}
                 </td>
@@ -75,6 +73,9 @@
                     @{{ employee.lastName }}
                 </td>
                 <td>
+                    @{{ employee.salary }}
+                </td>
+                <td>
                     @{{ employee.cellphone }}
                 </td>
                 <td>
@@ -82,6 +83,7 @@
                 </td>
                 <td>
                 <div class="btn-group btn-group-sm" role="group" aria-label="Basic mixed styles example">
+                    <a type="button" class="btn btn-outline-success" href="https://api.whatsapp.com/send?phone=591@{{ employee.cellphone }}" target="_blank">WhatsApp</a>
                     <a type="button" class="btn btn-outline-warning" href="@{{ '/editemployee/' + employee.id }}">Editar</a>
                     <button type="button" class="btn btn-outline-danger" ng-click="deleteEmployee(employee.id)">Eliminar</button>
                 </div>

@@ -33,6 +33,13 @@
                         $scope.products = result.data;
                     });
                 });
+              $scope.employees = [];
+
+                angular.element(document).ready(() => {
+                    $http.get('/ajaxemployees').then((result) => {
+                        $scope.employees = result.data;
+                    });
+                });
               $scope.salepoints = [];
 
                 angular.element(document).ready(() => {
@@ -47,52 +54,32 @@
     <body class="antialiased">
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-              <a class="navbar-brand" href="Deproal.html">Industrias Deproal</a>
+              <a class="navbar-brand" href="/">Industrias Deproal</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="Deproal.html">Inicio</a>
+                    <a class="nav-link active" aria-current="page" href="/">Inicio</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="comprar.html">Comprar</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="products.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Productos
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="products.html">La Vina</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="products.html">Ron Baron</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="products.html">Fiesta</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="products.html">Cana Dorada</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="products.html">Vodka Russo</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="products.html">Cuba Libre</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="products.html">Nitro</a></li>
-                    </ul>
+                    <a class="nav-link" name="productos" href="#productos">Productos</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="puntosdeventa.html">Puntos de Venta</a>
+                    <a class="nav-link" href="#puntosdv">Puntos de Venta</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="aboutus.html">Sobre Nosotros</a>
+                    <a class="nav-link" href="#about">Sobre Nosotros</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="contacto.html">Contacto</a>
+                    <a class="nav-link" href="#contactos">Contacto</a>
+                    
                   </li>
                 </ul>
                 <div class="col-md-4 text-end">
                     <a type="button" class="btn btn-outline-success me-2" href="login">Iniciar Sesion</a>
                     <a type="button" class="btn btn-outline-primary" href="register">Registrate</a>
-                    <a type="button" class="btn btn-outline-warning" href="newclientregister">Cliente Nuevo?</a>
                 </div>
               </div>
             </div>
@@ -105,7 +92,7 @@
 
       <div class="container">
         <div class="row featurette">
-          <div class="col-md-7">
+          <div class="col-md-7" id="about">
             <h2 class="featurette-heading">Industrias DEPROAL <span class="text-muted">|   Nuestra Historia</span></h2>
             <p class="lead"> Texto de Historia de la empresa Texto de Historia de la empresa Texto de Historia de la empresa Texto de Historia de la empresa Texto de Historia de la empresa Texto de Historia de la empresa Texto de Historia de la empresa Texto de Historia de la empresa Texto de Historia de la empresa Texto de Historia de la empresa Texto de Historia de la empresa</p>
           </div>
@@ -219,9 +206,9 @@
         
       </div>
 
-      <div class="container" ng-app="SalePointListModule" ng-controller="SalePointListController">
+      <div class="container" ng-app="SalePointListModule" ng-controller="SalePointListController" >
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Puntos de Venta</h1>
+        <h1 class="h2" id="puntosdv">Puntos de Venta</h1>
         </div>
         <table class="table table-striped">
         <thead>
@@ -260,14 +247,14 @@
                 </td>
                 <td>
                 <div class="btn-group btn-group-sm" role="group" aria-label="Basic mixed styles example">
-                    <button type="button" class="btn btn-outline-success">GoogleMaps</button>
+                    <a type="button" class="btn btn-outline-success" href="@{{ salepoint.photo }}" target="_blank">GoogleMaps</a>
                 </div>
                 </td>
             </tr>
         </tbody>
     </table>
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Productos</h1>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom" id="productos">
+        <h1 class="h2" id="productos">Productos</h1>
         </div>
     <table class="table table-striped">
         <thead>
@@ -309,6 +296,49 @@
                     @{{ product.price }}
                 </td>
                 
+            </tr>
+        </tbody>
+    </table>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom" id="productos">
+        <h1 class="h2" id="contactos">Contactos</h1>
+        </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Cargo
+                </th>
+                <th>
+                    Zona
+                </th>
+                <th>
+                    Celular
+                </th>
+                <th>
+
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="employee in employees">
+                <td>
+                    @{{ employee.firstName }}
+                </td>
+                <td>
+                    @{{ employee.charge }}
+                </td>
+                <td>
+                    Cochabamba
+                </td>
+                <td>
+                    @{{ employee.cellphone }}
+                </td>
+                <th>
+                  <a type="button" class="btn btn-outline-success" href="https://api.whatsapp.com/send?phone=591@{{ employee.cellphone }}&text=Buenas,%20necesito%20ayuda%20con%20la%20compra%20de%20productos" target="_blank">WhatsApp</a>
+                </th>
             </tr>
         </tbody>
     </table>

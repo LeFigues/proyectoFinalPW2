@@ -24,12 +24,12 @@
       </a>
     </li>
     <li>
-      <a href="/pedidos" class="nav-link text-white">
+      <a href="/pedidos" class="nav-link text-white disabled">
         Pedidos
       </a>
     </li>
     <li>
-      <a href="/einvoicelist" class="nav-link text-white">
+      <a href="/einvoicelist" class="nav-link text-white disabled">
         Historial
       </a>
     </li>

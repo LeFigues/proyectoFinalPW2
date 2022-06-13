@@ -79,7 +79,7 @@
                 </td>
                 <td>
                 <div class="btn-group btn-group-sm" role="group" aria-label="Basic mixed styles example">
-                    <button type="button" class="btn btn-outline-success">Vender</button>
+                    <a type="button" class="btn btn-outline-success" href="https://api.whatsapp.com/send?phone=591@{{ customer.cellphone }}" target="_blank">WhatsApp</a>
                     <a type="button" class="btn btn-outline-warning" href="@{{ '/editcustomer/' + customer.id }}">Editar</a>
                     <button type="button" class="btn btn-outline-danger" ng-click="deleteCustomer(customer.id)">Eliminar</button>
 

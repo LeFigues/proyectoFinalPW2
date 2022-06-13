@@ -39,7 +39,7 @@ Route::post('/employees', 'App\Http\Controllers\EmployeeController@postEmployee'
 Route::get('/editemployee/{id}',[AjaxEmployeeController::class, 'editEmployee'])->middleware('auth');
 Route::get('/ajaxemployeelist', [AjaxEmployeeController::class, 'showEmployeeList'])->middleware('auth')->name('ajaxemployeeslist');
 Route::get('/ajaxnewemployee', [AjaxEmployeeController::class, 'showNewEmployee'])->middleware('auth');
-Route::get('/ajaxemployees', [AjaxEmployeeController::class, 'getEmployees'])->middleware('auth');
+Route::get('/ajaxemployees', [AjaxEmployeeController::class, 'getEmployees']);
 Route::get('/ajaxemployees/{id}', [AjaxEmployeeController::class, 'getEmployeeById'])->middleware('auth');
 Route::post('/ajaxemployees', [AjaxEmployeeController::class, 'postEmployee'])->middleware('auth');
 Route::put('/ajaxemployees', [AjaxEmployeeController::class, 'putEmployee'])->middleware('auth');
